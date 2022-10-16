@@ -1,0 +1,82 @@
+[
+    {
+        "_id": "1",
+        "name": "Elsa Hood",
+        "gender": "female",
+        "phone": "+1 (842) 489-2221",
+        "address": "311 Durland Place, Rosburg, North Dakota, 1041",
+        "picture": "https://i.ibb.co/FYFFy3v/photo-1567784177951-6fa58317e16b.jpg"
+    },
+    {
+        "_id": "2",
+        "name": "Wilkins Gentry",
+        "gender": "male",
+        "phone": "+1 (920) 535-3877",
+        "address": "322 Remsen Street, Villarreal, Montana, 6590",
+        "picture": "https://i.ibb.co/FYFFy3v/photo-1567784177951-6fa58317e16b.jpg"
+    },
+    {
+        "_id": "3",
+        "name": "Jeannie Alford",
+        "gender": "female",
+        "phone": "+1 (804) 589-3419",
+        "address": "105 Williams Place, Oretta, Mississippi, 697",
+        "picture": "https://i.ibb.co/FYFFy3v/photo-1567784177951-6fa58317e16b.jpg"
+    },
+    {
+        "_id": "4",
+        "name": "Deena Davenport",
+        "gender": "female",
+        "phone": "+1 (959) 410-2646",
+        "address": "177 Bridgewater Street, Woodlake, Virginia, 4436",
+        "picture": "https://i.ibb.co/FYFFy3v/photo-1567784177951-6fa58317e16b.jpg"
+    },
+    {
+        "_id": "5",
+        "name": "Huber Washington",
+        "gender": "male",
+        "phone": "+1 (895) 411-2704",
+        "address": "182 Canton Court, Worcester, Arkansas, 3097",
+        "picture": "https://i.ibb.co/FYFFy3v/photo-1567784177951-6fa58317e16b.jpg"
+    },
+    {
+        "_id": "6",
+        "name": "Ines Rosa",
+        "gender": "female",
+        "phone": "+1 (953) 595-3365",
+        "address": "254 Euclid Avenue, Kirk, Wisconsin, 9361",
+        "picture": "https://i.ibb.co/FYFFy3v/photo-1567784177951-6fa58317e16b.jpg"
+    },
+    {
+        "_id": "7",
+        "name": "Lillian Mcbride",
+        "gender": "female",
+        "phone": "+1 (822) 528-2277",
+        "address": "728 Kingsway Place, Rivereno, Oklahoma, 3579",
+        "picture": "https://i.ibb.co/FYFFy3v/photo-1567784177951-6fa58317e16b.jpg"
+    },
+    {
+        "_id": "8",
+        "name": "Maricela Cox",
+        "gender": "female",
+        "phone": "+1 (930) 484-3637",
+        "address": "713 Melrose Street, Clara, Rhode Island, 7587",
+        "picture": "https://i.ibb.co/FYFFy3v/photo-1567784177951-6fa58317e16b.jpg"
+    },
+    {
+        "_id": "9",
+        "name": "Maryellen Herrera",
+        "gender": "female",
+        "phone": "+1 (925) 451-2123",
+        "address": "193 Ridge Boulevard, Convent, New Jersey, 1553",
+        "picture": "https://i.ibb.co/FYFFy3v/photo-1567784177951-6fa58317e16b.jpg"
+    },
+    {
+        "_id": "10",
+        "name": "Marion Howell",
+        "gender": "female",
+        "phone": "+1 (872) 506-2011",
+        "address": "967 Plymouth Street, Eureka, Maine, 9516",
+        "picture": "https://i.ibb.co/FYFFy3v/photo-1567784177951-6fa58317e16b.jpg"
+    }
+]
