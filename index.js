@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const userRouter = require('./Routes/user.route');
+const errorHandler = require('./Middleware/errorHandler');
 const port = process.env.PORT || 5000;
 
 
@@ -31,4 +32,16 @@ app.all('*', (req, res) => {
 /* Server Listening on PORT */
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
+})
+
+
+/* Global Error Handler*/
+app.use(errorHandler);
+
+
+process.on("unhandledRejection", (error) => {
+    console.log(error.name, error.message);
+    app.close(() => {
+        process.exit(1);
+    })
 })
