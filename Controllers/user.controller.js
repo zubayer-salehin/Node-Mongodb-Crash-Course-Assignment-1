@@ -2,27 +2,27 @@ const errorHandler = require("../Middleware/errorHandler");
 const users = require("../users.json");
 
 
-module.exports.getRandomUser = (req, res) => {
+module.exports.getRandomUser = (req, res, next) => {
     try {
         const randomUserId = String(Math.floor(Math.random() * 10) + 1);
         const randomUser = users.find(user => user._id === randomUserId)
         res.send(randomUser);
     } catch (error) {
-        errorHandler(error);
+        next(error);
     }
 }
 
-module.exports.getAllUser = (req, res) => {
+module.exports.getAllUser = (req, res, next) => {
     try {
         const { limit } = req.query;
         const result = users.slice(0, limit);
         res.send(result);
     } catch (error) {
-        errorHandler(error);
+        next(error);
     }
 }
 
-module.exports.saveUser = (req, res) => {
+module.exports.saveUser = (req, res, next) => {
     try {
         const { name, gender, address, phone, picture } = req.body;
         const _id = String(users.length + 1);
@@ -32,11 +32,11 @@ module.exports.saveUser = (req, res) => {
             res.send(users);
         }
     } catch (error) {
-        errorHandler(error);
+        next(error);
     }
 }
 
-module.exports.updateUser = (req, res) => {
+module.exports.updateUser = (req, res, next) => {
     try {
         const updateUserId = req.params.id;
         const userIdValidate = 0 < updateUserId && updateUserId <= users.length;
@@ -54,11 +54,11 @@ module.exports.updateUser = (req, res) => {
             })
         }
     } catch (error) {
-        errorHandler(error);
+        next(error);
     }
 }
 
-module.exports.updateManyUser = (req, res) => {
+module.exports.updateManyUser = (req, res, next) => {
     try {
         const ids = req.body.ids;
         const updateUsersInfo = req.body.users;
@@ -79,11 +79,11 @@ module.exports.updateManyUser = (req, res) => {
         }
         res.send(updateUsersCollection);
     } catch (error) {
-        errorHandler(error);
+        next(error);
     }
 }
 
-module.exports.deleteUser = (req, res) => {
+module.exports.deleteUser = (req, res, next) => {
     try {
         const deleteUserId = req.params.id;
         const userIdValidate = 0 < deleteUserId && deleteUserId <= users.length;
@@ -102,6 +102,6 @@ module.exports.deleteUser = (req, res) => {
             })
         }
     } catch (error) {
-        errorHandler(error);
+        next(error);
     }
 }
