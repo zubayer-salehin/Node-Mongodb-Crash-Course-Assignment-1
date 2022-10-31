@@ -13,22 +13,18 @@ router.patch("/update/:id", userControllers.updateUser)
 
 /** 
  ******* Update Many User Fetch Body Formate *******
- {
-  "ids": [
-    4,
-    7
-  ],
-  "users": [
-    {
-      "name": "zubayer",
-      "gender": "male"
-    },
-    {
-      "name": "shafik",
-      "gender": "female"
-    }
-  ]
-}
+ [
+  {
+    "_id": "4",
+    "name": "zubayer",
+    "gender": "male"
+  },
+  {
+    "_id": "5",
+    "name": "shafik",
+    "gender": "female"
+  }
+]
 **/
 router.patch("/bulk-update", userControllers.updateManyUser)
 

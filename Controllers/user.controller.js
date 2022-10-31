@@ -1,5 +1,4 @@
-const errorHandler = require("../Middleware/errorHandler");
-const users = require("../users.json");
+const users = require("../JSON/users.json");
 
 
 module.exports.getRandomUser = (req, res, next) => {
@@ -30,6 +29,11 @@ module.exports.saveUser = (req, res, next) => {
         if (newUserValidate) {
             users.push({ _id, name, gender, address, phone, picture });
             res.send(users);
+        } else {
+            res.status(500).send({
+                success: false,
+                message: "please send all user Information"
+            });
         }
     } catch (error) {
         next(error);
@@ -50,7 +54,7 @@ module.exports.updateUser = (req, res, next) => {
         } else {
             res.status(500).send({
                 success: false,
-                message: "Internal server error"
+                message: "Please send valid User Id"
             })
         }
     } catch (error) {
@@ -60,24 +64,16 @@ module.exports.updateUser = (req, res, next) => {
 
 module.exports.updateManyUser = (req, res, next) => {
     try {
-        const ids = req.body.ids;
-        const updateUsersInfo = req.body.users;
-        const updateUsersCollection = [];
-        for (const id of ids) {
-            users.find(user => {
-                if (user._id === String(id)) {
-                    updateUsersCollection.push(user);
-                }
-            })
-        }
-        for (let i = 0; i < updateUsersCollection.length; i++) {
-            const updateUserCollection = updateUsersCollection[i];
-            const updateUserInfo = updateUsersInfo[i];
-            for (const key in updateUserInfo) {
-                updateUserCollection[key] = updateUserInfo[key]
+        const updateManyUserInfo = req.body;
+        const updateUserCollection = [];
+        for (const singleUser of updateManyUserInfo) {
+            const updateSingleUser = users.find(user => user._id == singleUser._id)
+            for (const key in singleUser) {
+                updateSingleUser[key] = singleUser[key]
             }
+            updateUserCollection.push(updateSingleUser);
         }
-        res.send(updateUsersCollection);
+        res.send(updateUserCollection);
     } catch (error) {
         next(error);
     }
@@ -98,7 +94,7 @@ module.exports.deleteUser = (req, res, next) => {
         } else {
             res.status(500).send({
                 success: false,
-                message: "Internal server error"
+                message: "Please send valid User Id"
             })
         }
     } catch (error) {

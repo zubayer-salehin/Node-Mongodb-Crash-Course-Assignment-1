@@ -29,14 +29,14 @@ app.all('*', (req, res) => {
 })
 
 
+/* Global Error Handler*/
+app.use(errorHandler);
+
+
 /* Server Listening on PORT */
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
-
-
-/* Global Error Handler*/
-app.use(errorHandler);
 
 
 process.on("unhandledRejection", (error) => {
